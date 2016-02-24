@@ -45,7 +45,7 @@ proj/
 - In `data`, one should find raw image data and a file that contains groundtruth for the images. 
 - The `doc` folder should have documentations for this project, presentation files and other supporting materials. 
 - The `figs` folder contains figure files produced during the project and running of the codes. 
-- The `lib` folder contain R codes for the AI program. It should have the following files: `feature.R`, `training.R`, and `test.R`. The codes in the `lib` folder are not intended to be run directly but to be called from `main.R`. 
+- The `lib` folder contain R codes for the AI program. It should have the following files: `feature.R`, `train.R`, and `test.R`. The codes in the `lib` folder are not intended to be run directly but to be called from `main.R`. 
 - The `output` folder is the holding place for feature extracted, other intermediate and final results.
 
 The instructional team will cross-examine each team's proposal for reproducibility on the current dataset and for reliability using a different dataset.
