@@ -1,1 +1,0 @@
-# Baseline model (color distribution)
