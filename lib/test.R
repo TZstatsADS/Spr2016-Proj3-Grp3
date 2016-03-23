@@ -1,26 +1,10 @@
-######################################################
-### Fit the classification model with testing data ###
-######################################################
-
-### Author: Yuting Ma
-### Project 3
-### ADS Spring 2016
-
 test <- function(fit_train, dat_test){
-  
-  ### Fit the classfication model with testing data
-  
-  ### Input: 
-  ###  - the fitted classification model using training data
-  ###  -  processed features from testing images 
-  ### Output: training model specification
-  
-  ### load libraries
-  library("gbm")
-  
-  pred <- predict(fit_train$fit, newdata=dat_test, 
-                  n.trees=fit_train$iter, type="response")
-  
-  return(as.numeric(pred> 0.5))
+  testadv.x <- dat_test[, 1:9735]
+  testbase.x <- dat_test[, 9736:dim(dat_test)[2]]
+  SVM_Model_adv <- fit_train$SVM_Model_adv
+  SVM_Model_base <- fit_train$SVM_Model_base
+  adv <- predict(SVM_Model_adv, testadv.x)
+  baseline <- predict(SVM_Model_base, testbase.x)
+  #return(pred=adv)
+  return(pred=list(adv=adv, baseline=baseline))
 }
-
